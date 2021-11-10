@@ -1,0 +1,292 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('Avenir-Roman.eot');
+    src: local('Avenir-Roman'),
+        url('Avenir-Roman.eot?#iefix') format('embedded-opentype'),
+        url('Avenir-Roman.woff2') format('woff2'),
+        url('Avenir-Roman.woff') format('woff'),
+        url('Avenir-Roman.ttf') format('truetype'),
+        url('Avenir-Roman.svg#Avenir-Roman') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Strangelove NextSlab Wide';
+    src: url('StrangeloveNextSlab-WideRegular.eot');
+    src: local('Strangelove NextSlab Wide Regular'), local('StrangeloveNextSlab-WideRegular'),
+        url('StrangeloveNextSlab-WideRegular.eot?#iefix') format('embedded-opentype'),
+        url('StrangeloveNextSlab-WideRegular.woff2') format('woff2'),
+        url('StrangeloveNextSlab-WideRegular.woff') format('woff'),
+        url('StrangeloveNextSlab-WideRegular.ttf') format('truetype'),
+        url('StrangeloveNextSlab-WideRegular.svg#StrangeloveNextSlab-WideRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Strangelove NextSlab Wide';
+    src: url('StrangeloveNextSlab-WideBold.eot');
+    src: local('Strangelove NextSlab Wide Bold'), local('StrangeloveNextSlab-WideBold'),
+        url('StrangeloveNextSlab-WideBold.eot?#iefix') format('embedded-opentype'),
+        url('StrangeloveNextSlab-WideBold.woff2') format('woff2'),
+        url('StrangeloveNextSlab-WideBold.woff') format('woff'),
+        url('StrangeloveNextSlab-WideBold.ttf') format('truetype'),
+        url('StrangeloveNextSlab-WideBold.svg#StrangeloveNextSlab-WideBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Strangelove NextSlab Narrow Bd';
+    src: url('StrangeloveNextSlab-NarrowBold.eot');
+    src: local('Strangelove NextSlab Narrow Bold'), local('StrangeloveNextSlab-NarrowBold'),
+        url('StrangeloveNextSlab-NarrowBold.eot?#iefix') format('embedded-opentype'),
+        url('StrangeloveNextSlab-NarrowBold.woff2') format('woff2'),
+        url('StrangeloveNextSlab-NarrowBold.woff') format('woff'),
+        url('StrangeloveNextSlab-NarrowBold.ttf') format('truetype'),
+        url('StrangeloveNextSlab-NarrowBold.svg#StrangeloveNextSlab-NarrowBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Strangelove NextSlab Mix';
+    src: url('StrangeloveNextSlab-MixBold.eot');
+    src: local('Strangelove NextSlab Mix Bold'), local('StrangeloveNextSlab-MixBold'),
+        url('StrangeloveNextSlab-MixBold.eot?#iefix') format('embedded-opentype'),
+        url('StrangeloveNextSlab-MixBold.woff2') format('woff2'),
+        url('StrangeloveNextSlab-MixBold.woff') format('woff'),
+        url('StrangeloveNextSlab-MixBold.ttf') format('truetype'),
+        url('StrangeloveNextSlab-MixBold.svg#StrangeloveNextSlab-MixBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Strangelove NextSlab Mix';
+    src: url('StrangeloveNextSlab-MixRegular.eot');
+    src: local('Strangelove NextSlab Mix Regular'), local('StrangeloveNextSlab-MixRegular'),
+        url('StrangeloveNextSlab-MixRegular.eot?#iefix') format('embedded-opentype'),
+        url('StrangeloveNextSlab-MixRegular.woff2') format('woff2'),
+        url('StrangeloveNextSlab-MixRegular.woff') format('woff'),
+        url('StrangeloveNextSlab-MixRegular.ttf') format('truetype'),
+        url('StrangeloveNextSlab-MixRegular.svg#StrangeloveNextSlab-MixRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Strangelove NextSlab Narrow';
+    src: url('StrangeloveNextSlab-NarrowRegular.eot');
+    src: local('Strangelove NextSlab Narrow Regular'), local('StrangeloveNextSlab-NarrowRegular'),
+        url('StrangeloveNextSlab-NarrowRegular.eot?#iefix') format('embedded-opentype'),
+        url('StrangeloveNextSlab-NarrowRegular.woff2') format('woff2'),
+        url('StrangeloveNextSlab-NarrowRegular.woff') format('woff'),
+        url('StrangeloveNextSlab-NarrowRegular.ttf') format('truetype'),
+        url('StrangeloveNextSlab-NarrowRegular.svg#StrangeloveNextSlab-NarrowRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro CN';
+    src: url('AvenirNextLTPro-MediumCn.eot');
+    src: local('Avenir Next LT Pro Medium Condensed'), local('AvenirNextLTPro-MediumCn'),
+        url('AvenirNextLTPro-MediumCn.eot?#iefix') format('embedded-opentype'),
+        url('AvenirNextLTPro-MediumCn.woff2') format('woff2'),
+        url('AvenirNextLTPro-MediumCn.woff') format('woff'),
+        url('AvenirNextLTPro-MediumCn.ttf') format('truetype'),
+        url('AvenirNextLTPro-MediumCn.svg#AvenirNextLTPro-MediumCn') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('AvenirNextLTPro-Regular.eot');
+    src: local('Avenir Next LT Pro Regular'), local('AvenirNextLTPro-Regular'),
+        url('AvenirNextLTPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('AvenirNextLTPro-Regular.woff2') format('woff2'),
+        url('AvenirNextLTPro-Regular.woff') format('woff'),
+        url('AvenirNextLTPro-Regular.ttf') format('truetype'),
+        url('AvenirNextLTPro-Regular.svg#AvenirNextLTPro-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro';
+    src: url('AvenirNextLTPro-Bold.eot');
+    src: local('Avenir Next LT Pro Bold'), local('AvenirNextLTPro-Bold'),
+        url('AvenirNextLTPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('AvenirNextLTPro-Bold.woff2') format('woff2'),
+        url('AvenirNextLTPro-Bold.woff') format('woff'),
+        url('AvenirNextLTPro-Bold.ttf') format('truetype'),
+        url('AvenirNextLTPro-Bold.svg#AvenirNextLTPro-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro CN';
+    src: url('AvenirNextLTPro-BoldCn.eot');
+    src: local('Avenir Next LT Pro Bold Condensed'), local('AvenirNextLTPro-BoldCn'),
+        url('AvenirNextLTPro-BoldCn.eot?#iefix') format('embedded-opentype'),
+        url('AvenirNextLTPro-BoldCn.woff2') format('woff2'),
+        url('AvenirNextLTPro-BoldCn.woff') format('woff'),
+        url('AvenirNextLTPro-BoldCn.ttf') format('truetype'),
+        url('AvenirNextLTPro-BoldCn.svg#AvenirNextLTPro-BoldCn') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro CN';
+    src: url('AvenirNextLTPro-CnIt.eot');
+    src: local('Avenir Next LT Pro Condensed Italic'), local('AvenirNextLTPro-CnIt'),
+        url('AvenirNextLTPro-CnIt.eot?#iefix') format('embedded-opentype'),
+        url('AvenirNextLTPro-CnIt.woff2') format('woff2'),
+        url('AvenirNextLTPro-CnIt.woff') format('woff'),
+        url('AvenirNextLTPro-CnIt.ttf') format('truetype'),
+        url('AvenirNextLTPro-CnIt.svg#AvenirNextLTPro-CnIt') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro CN';
+    src: url('AvenirNextLTPro-Cn.eot');
+    src: local('Avenir Next LT Pro Condensed'), local('AvenirNextLTPro-Cn'),
+        url('AvenirNextLTPro-Cn.eot?#iefix') format('embedded-opentype'),
+        url('AvenirNextLTPro-Cn.woff2') format('woff2'),
+        url('AvenirNextLTPro-Cn.woff') format('woff'),
+        url('AvenirNextLTPro-Cn.ttf') format('truetype'),
+        url('AvenirNextLTPro-Cn.svg#AvenirNextLTPro-Cn') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline
+}
+
+
+body {
+    line-height: 1;
+    font-family: 'Avenir', sans-serif;
+    max-width: 1920px;
+    min-width: 320px;
+    margin: auto;
+    background:rgb(248,248,248); 
+    background:rgb(255,255,255); 
+    text-transform:uppercase;
+}
+
+h2, h3 {color:var(--bio-orange)}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+    --bio-light: #f8f8f8;
+    --bio-blue: #3c384f;
+    --bio-orange: rgb(247, 148, 29);
+    --bio-black: rgba(60, 56, 79, 0.72);
+    /*--bio-blacker: rgba(60, 56, 79, 1);*/
+    --bio-blacker: rgba(60, 57, 80, 1);
+    --margin: 0px;
+    --margintop: 80px;
+    --marg: auto;
+    --mt: 55px;
+  }
+
+  html {background:var(--bio-light);}
+
+

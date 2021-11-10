@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="hu">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Rólunk - A LocalCat története</title>
+      <meta name="description" content="Saját tapasztalatokból felmerülő igény vezetett ahhoz, hogy létrehozzuk a LocalCat cicaszitter-szolgáltatást. Ismerkedj meg velünk!" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16" />
+      <meta name="theme-color" content="#1a1a1a">
+      <link rel="stylesheet" href="includes/flickity.min.css?22" media="screen">
+      <link rel="stylesheet" href="includes/stylesheet.css?v=2">
+      <style>
+         /* flickity on by default */
+         .carousel:after {
+         content: '';
+         }
+         .carousel-cell {
+         margin-bottom:47px;
+         }
+         .carousel-cell blockquote {
+         background:
+         linear-gradient(to right, var(--buttonblack) 4px, transparent 4px) 0% 0%,
+         linear-gradient(to bottom, var(--buttonblack) 4px, transparent 4px) 0% 0%,
+         linear-gradient(to left, var(--buttonblack) 4px, transparent 4px) 100% 100%,
+         linear-gradient(to top, var(--buttonblack) 4px, transparent 4px) 100% 100%;
+         background-repeat: no-repeat;
+         background-size: 20px 20px;
+         }
+         .notmobilecell {display:none;}
+         .showed {display:block;}
+         .showmemore {
+         margin:auto;
+         background: none;
+         color: inherit;
+         border: none;
+         padding: 0;
+         position:absolute;
+         top:-70px;
+         left:50%;
+         padding-top:10px;
+         padding-bottom:10px;
+         padding-right: 26px;    
+         width:294px;
+         transform: translateX(-50%);
+         font: inherit;
+         cursor: pointer;
+         outline: inherit;
+         font-weight:bold;
+         font-family: var(--book);
+         }
+         .showmemore:after {
+         content: "";
+         border: 8px solid transparent;
+         border-top-color: rgba(102, 102, 102, 0.5);
+         position: absolute;
+         top: 50%;
+         right: 20px;
+         margin-top: -4px;
+         transform: rotate(0deg);
+         transition: transform 0.3s, color 0.4s;
+         transform-origin: 50% 20%;
+         }
+         .abbuholder {position:relative;}
+         .nonebutton {display:none;}
+         .showed:last-of-type {
+         margin-bottom:0;
+         }
+         @media screen and ( min-width: 768px ) {
+         .showmemore {display:none;}
+         /* disable Flickity for large devices */
+         .carousel:after {
+         content: 'flickity';
+         display: none;
+         }
+         .notmobilecell {display:block;}
+         .wearemobile {display:none;}
+         .carousel-cell   {margin-bottom:40px;}
+         .carousel-cell.is-selected blockquote {
+         background:
+         linear-gradient(to right, var(--buttonblack) 3px, transparent 4px) 0% 0%,
+         linear-gradient(to bottom, var(--buttonblack) 3px, transparent 4px) 0% 0%,
+         linear-gradient(to left, var(--buttonblack) 3px, transparent 4px) 100% 100%,
+         linear-gradient(to top, var(--buttonblack) 3px, transparent 4px) 100% 100%;
+         background-repeat: no-repeat;
+         background-size: 20px 20px;
+         }
+         .carousel-cell blockquote {
+         background:
+         linear-gradient(to right, var(--buttonblack) 0px, transparent 4px) 0% 0%,
+         linear-gradient(to bottom, var(--buttonblack) 0px, transparent 4px) 0% 0%,
+         linear-gradient(to left, var(--buttonblack) 0px, transparent 4px) 100% 100%,
+         linear-gradient(to top, var(--buttonblack) 0px, transparent 4px) 100% 100%;
+         background-repeat: no-repeat;
+         background-size: 20px 20px;
+         }
+         @-moz-document url-prefix() {
+         .flickity-slider {
+         transform: none !important;
+         }
+         .carousel-cell {
+         left: 0 !important;
+         opacity: 0;
+         transition: opacity 0.3s ease-in-out;
+         z-index: -1;
+         }
+         .carousel-cell.is-selected {
+         opacity: 1;
+         z-index: 0
+         }
+         }
+         }
+         .carousel.is-expanded .carousel-cell:before {
+         line-height: 400px;
+         }
+         blockquote {
+         text-rendering: optimizeLegibility;text-rendering: geometricPrecision;font-smooth: always;font-smoothing: antialiased;-moz-font-smoothing: antialiased;-webkit-font-smoothing: antialiased;-webkit-font-smoothing: subpixel-antialiased;} 
+      </style>
+   </head>
+   <body>
+      <nav>
+         <div class="mobile-menu">
+            <div class="langselector"><a class="active-lang">HUN</a><br><a href="/home">ENG</a></div>
+            <!--   <img src="img/logo-cat.png" alt="Ads interactive logó" class="main-mobile-logo">--> 
+            <a href="www.google.com" class="main-mobile-logo"><i class="lcicon-localcat-cica"></i></a>
+            <div class="menu-icon" onclick="openNav()">
+               <div id="nav-icon1">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </div>
+            </div>
+         </div>
+         <div id="mySidenav" class="sidenav">
+            <a href="#" class="animated navlink noselect" onclick="closeNav()">Szolgáltatások</a>
+            <a href="javascript:void(0);" class="animated-2 navlink">Árak</a>          
+            <a href="/ajanlatkeres.html" class="animated-3 navlink">Ajánlatkérés</a>
+            <a href="/rolunk.html" class="animated-4 navlink">Rólunk</a>
+            <a href="/gyik.html" class="animated-5 navlink">Gyik</a>
+            <a href="/kapcsolat.html" class="animated-6 navlink">Kapcsolat</a>
+         </div>
+      </nav>
+      <div class="gradient"></div>
+      <div class="hero pad aboutpoz">
+         <nav>
+            <div class="pc-menu">
+               <a href="/" style="margin-left:5px;">Kezdőlap</a>
+               <a href="/szolgaltatasok">Szolgáltatások</a>
+               <a href="/arak">Árak</a>
+               <a href="/ajanlatkeres.html">Ajánlatkérés</a>
+               <a href="/rolunk.html">Rólunk</a>
+               <a href="/gyik.html">Gyik</a>
+               <a href="/kapcsolat.html" style="margin-right:45px;" class="contactlink">Kapcsolat</a>
+               <a href="/gyik.html" class="active-lang" style="margin-right:5px;">Hun</a>|
+               <a href="/kapcsolat.html" style="margin-left:5px;">Eng</a>
+            </div>
+         </nav>
+         <h1 class="main-title specmain"> 
+            <span>
+            A LocalCat története
+            </span>
+         </h1>
+      </div>
+      <div class="main">
+         <!--<a href="/megrendeles" class="order-href second-order gvuitwo"><i class="lcicon-megrendelem-mancs-korben"></i>AJÁNLATKÉRÉS</a>-->
+         <div class="gentextbox aboutgentext">
+            <p>Saját tapasztalatokból felmerülő igény vezetett ahhoz, hogy létrehozzuk a LocalCat cicaszitter-szolgáltatást. Macskatulajdonosok vagyunk, és visszatérő problémát jelentett, hogy az utazásaink (nyaralások, üzleti utak, hosszú hétvégék) során kire bízzuk a cicáinkat. Barátokat, családtagokat és gyakran egymást kértük meg egy-egy alkalommal a cicák etetésére, de az évek múlásával egyre inkább úgy éreztük, hogy ez a megoldás hosszú távon nem fenntartható – a szívességnek is van határa. </p>
+            <p>Szerettünk volna cicaszitterekhez fordulni, de nem találtunk olyan vállalkozást, amely ilyen átfogó és megbízható szolgáltatást nyújtott volna. Ekkor született meg bennünk a LocalCat létjogosultságának gondolata, és nem sokkal később meg is valósítottuk saját elképzeléseink alapján macskaszitter-szolgáltatásunkat.</p>
+            <p>Mivel a bizalom a cicák és lakások együttállásában kulcsfontosságú hívószó, a LocalCat csapatának magját mi magunk (az ötletadók) alkotjuk, magunk köré pedig olyan cicaszittereket gyűjtöttünk az elmúlt négy év alatt, akikre teljes nyugalomban bízzuk rá a saját kedvenceinket is. Tehát csak és kizárólag olyan macskaszitterekkel működünk együtt, akik nemcsak szeretik a cicákat, de akikért maximális felelősséget vállalunk, és akiket személyesen is jól ismerünk.</p>
+            <p>A LocalCat szerveződési elve, hogy Budapest részeit a cicaszitterek által gyakran látogatott (munkahely, lakhely stb.) kerületek szerint osztjuk fel. Ez a rendeződés a gyors közlekedés és a pontos érkezés mellett azt a célt is szolgálja, hogy az egyes cicakliensekhez ugyanaz a macskaszitter érkezzen, ha kapacitása engedi. A cicák számára nemcsak a megszokott környezet, de a már megkedvelt cicaszitter is hozzájárul a biztonságérzet fenntartásához és a stresszmentesen eltöltött időhöz, amíg a gazdi távol van.</p>
+            <h2 class="yellow longyellow aboutyellow">Reméljük, bizalommal fordulsz hozzánk, és hasznodra válik majd a LocalCat nyújtotta hiánypótló cicaszitter-szolgáltatás.</h2>
+         </div>
+         <div class="yellowiconcontainer">
+            <div class="iconcard">
+               <i class="lcicon-professzonialitas"></i>
+               <h3 class="icontitle">professzionalitás</h3>
+               <p>Kizárólag olyan többéves referenciával és erkölcsi bizonyítvánnyal rendelkező cicaszitterekkel dolgozunk, akikért maximális felelősséget vállalunk. Nem közvetítőként, hanem macskaszittereinkkel együtt, egy csapatként tevékenykedünk, így biztos lehetsz benne, hogy személyesen ismerjük a hozzád érkező macskafelvigyázót.</p>
+            </div>
+            <div class="iconcard">
+               <i class="lcicon-tapasztalat"></i>
+               <h3 class="icontitle">tapasztalat</h3>
+               <p>Cicaszittereink már számos puhatalpút etettek és gondoztak gazdáik távollétében – valamennyien értenek a cicák nyelvén és sajátjukként szeretgetik a rájuk bízott kis klienseket.
+                  <br>A cicák gondozására felelősségteljes munkaként és feltöltő kikapcsolódásként tekintenek.
+               </p>
+            </div>
+            <div class="iconcard">
+               <i class="lcicon-pontossag"></i>
+               <h3 class="icontitle">pontosság</h3>
+               <p>Cicaszittereink az előre leegyeztetett időben érkeznek meg az előzetes konzultációra, illetve az általad meghatározott idősávban történik meg a cicád etetése. A belvárosban a késéseket elkerülendő BKV-val és biciklivel közlekedünk.</p>
+            </div>
+            <div class="iconcard">
+               <i class="lcicon-rugalmassag"></i>
+               <h3 class="icontitle">rugalmasság</h3>
+               <p>A LocalCat szerveződési elve a maximális rugalmasságot szolgálja. A cicád egyéni igényeinek megfelelően gondozzuk kedvencedet, és a cicaszittelés idejének tekintetében is igyekszünk kedvenced napi rutinjához igazodni.</p>
+            </div>
+            <div class="iconcard">
+               <i class="lcicon-megbizhatosag"></i>
+               <h3 class="icontitle">megbízhatóság</h3>
+               <p>A felelősségtudat és megbízhatóság kulcsfontosságú számunkra. Az előzetes személyes konzultáció keretében te magad is megbizonyosodhatsz cicaszittereink felkészültségéről.
+                  Macskafelvigyázóink valamennyi látogatás során valós időben fényképes riportokat küldenek neked, amelynek beérkezését a LocalCat központja is figyelemmel kíséri.
+               </p>
+            </div>
+            <div class="iconcard">
+               <i class="lcicon-segitsegnyujtas"></i>
+               <h3 class="icontitle">segítségnyújtás</h3>
+               <p>Baj esetén azonnal lépünk: rögtön tájékoztatunk, és a cicádat elvisszük az általad előre megjelölt állatorvoshoz (hétvégén állatorvosi ügyeletre). Cicaszittereink a LocalCat „háttérintézményének” segítségét is azonnal megkapják, így együttes erővel igyekszünk mihamarabb elhárítani a felmerülő kellemetlenséget.
+               </p>
+            </div>
+            <div class="iconcard">
+               <i class="lcicon-biztonsag"></i>
+               <h3 class="icontitle">biztonság</h3>
+               <p>A cicádon felül az otthonod is napi felügyelet alatt lesz – ha pedig napi mozgás érzékelhető az ingatlanban, az a betörőket is távol tartja. Kérünk, ha a lakásban vagy a lakás környezetében térfigyelő kamera/webkamera működik, előzetesen tájékoztass minket, mert a cicaszitter beleegyezését kell kérni felvétel rögzítéséhez.
+               </p>
+            </div>
+         </div>
+         <h2 class="yellow quotetop"><span>Rólunk mondták</span></h2>
+         <img src="img/rolunk.html-mondtak-85x85.png" alt="Rólonk mondták ikon" class="quote-cat"></img>
+         <div class="carousel-outer-container carousel-container">
+            <div class="carousel c-container" data-flickity='{ "wrapAround": true, "cellSelector": ".carousel-cell", "adaptiveHeight": true, "watchCSS": true }'>
+               <div class="carousel-cell">
+                  <blockquote class="quote">Ha létezik tökéletes szolgáltatás, akkor az a LocalCat. 2-12 napos időtartamban, több alkalommal vigyáztak már a cicánkra, aki mindig boldogan, kiegyensúlyozottan várt minket haza. A cicaszitterek, akikkel találkoztunk, egytől egyig maguk is boldog macskatulajdonosok voltak, hatalmas figyelemmel, szeretettel, profizmussal dolgoztak, mi pedig nyugodtan utaztunk, mert tudtuk, hogy Jürgenkével minden rendben van, vigyáznak rá, tiszteletben tartják a természetét. Egy nagyon fontos adalék, ami sokat elmond a LocalCat csapatról: a cicánk kiszökött a lakásból, nem cicaszittelős időszakban, hanem amikor velünk volt itthon, a mi hibánkból. A LocalCatnél segítettek, hogy a cicakereső poszt minél több emberhez eljusson, és keresésben is ajánlottak segítséget. Szerencsére a cica épségben megkerült végül. Nem hiszem, hogy létezik még egy olyan szolgáltató, aki ilyen segítőkész akkor, amikor az ügyfél saját, személyes helyzetéről van szó. Ha tehetném, akkor 6 csillagot is adnék.<cite> — Kata</cite></blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote">“Már előző alkalommal is csak szuperlatívuszokban tudtunk beszélni a szolgáltatásról és az azt nyújtó szitterekről, ám kiderült, hogy még a felsőfok is fokozható. Időközben ugyanis az egyik kandúrunk inzulininjekciókra szoruló cukorbeteg lett, öreg és félős társa pedig még bizalmatlanabbá vált. Erika azonban csodát tett: az öregúr halálosan beleszeretett a "pótmamájába", miközben a diabéteszes cicánk is szakszerű kezelésben, no meg sok kényeztetésben részesült. Amit kaptunk, az nem csupán kifogástalan szolgáltatás, hanem megfizethetetlen segítség. Mindent nagyon köszönünk!.<cite> — Kati és Rudolf</cite></blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote"> 
+                     "Nagyon elégedett voltam, mind a szervezéssel, mind a cicafelügyelettel. Rugalmas, profi és empatikus csapat, a cicák barátai, ami nekem nagyon fontos volt. Bogi, a cicaszitterünk nagyon kedves, lelkiismeretes volt és egy igazi cicasuttogó. Először hagytam egyedül a cicámat, jó volt tudni, hogy jó kezekben van, Bogi a megbeszélt időben jött, nagyon szépen gondoskodott Zorróról, játszott vele, az egyébként kicsit harapós cicám hagyta magát simogatni, ami engem is meglepett. Nagyon vártam a napi riportokat, jó volt látni a fotókon a "mosolygós" cicámat. Mindenkinek ajánlom a LocalCat-ot."<cite> — Andrea</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote">"Aranyosak, ügyesek, megbízhatóak.... nagyszerűek! Cicáinkat nyaralásunk végén gömbölyűbben és boldogabban láttuk viszont, mintha velünk lettek volna. És hogy minden nap fotókkal illusztrált levelet kaptunk róluk, az nem csak affelől nyugtatott meg, hogy a macsekok nem kóboroltak el, hanem azt is jó volt tudni, hogy a házunk környékén is minden rendben van. Köszi hát nagyon munkátokat, abszolút hiánypótló szolgáltatást találtatok ki. Nagyon sok sikert a jövőre!!!"
+                     <cite> — Zoltán</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote">"Abszolút megérte, máskor is igénybe fogjuk venni a szolgáltatást. Mindennap kétszer kaptunk képeket a cicákról és teljes biztonságban tudhattuk őket. Bogi nem csak ellátta őket, hanem rengeteget foglalkozott is velük, így minden a megszokott kerékvágásban ment számukra a távollétünkben is."
+                     <cite> — Bianka</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote">"Fantasztikusan profi szolgáltatást kapunk!!! Nagyon köszönjük!!! Csak ajánlani tudom mindenkinek szívből!!! És a fotók, amiket kaptunk tőlük a nyaralás alatt, megérdemelnének néhány díjat egy fotókiállításon!!!"
+                     <cite> — Ildikó</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote">"Minden nagyon profin zajlott. Köszönet a sok kedvességért, a napi folytatásos beszámolóért, a szuper képekért Sziminek, máskor is biztosan kérünk tőletek segítséget! Pluszban a virágaim is csodásak maradtak! Mangó cica nagyon élvezte!"
+                     <cite> — Gabriella</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell">
+                  <blockquote class="quote">"Gyors válasz, odafigyelés, megbízhatóság és kedvesség amit kaptunk a cicámmal együtt. Biztosan fogok még segítséget kérni tőletek a jövőben.<br><br>
+                     ️	😊 Köszönjük! Zsuzsi és Mirci cica"
+                     <cite> — Zsuzsi</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">"Nagyon elégedett vagyok a szolgáltatással, nagyon cicaszerető, gondos csapat. 9 napos gondoskodást vettem igénybe két cicámnak, 18 és 12 évesek, tehát nem éppen fiatalok, igen szeretet igényesek. Hazatéréskor, két teljesen kiegyensúlyozott cicát találtam, mintha el sem utaztam volna. Hála Gabriellának, aki teljes bevetéssel szeretgette őket. Nagyon köszönöm Neki! Mindenkinek ajánlom a szolgáltatást, nagyon boldog vagyok, hogy léteznek!"
+                     <cite> — Ildikó</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">"Nagyon megbízható, gondos csapat. Fél éves perzsa cicámnak kellett pár napra felügyelet egy családi program miatt. Alapvetően barátságos cica, de sose bíztam még más gondjaira, ezért aggódtam, hogy fog reagálni. Teljesen jól vette a helyzetet, és ez nagyban köszönhető volt Ottinak, a cicaszitternek is, aki minden kérésre, igényre ügyelve maximálisan ellátta őt. Egy vidám szőrgombóc várt vissza, aki azonnal játszani akart, se sértődés, se nyávogás 🧶 🐈.  Biztos, hogy fogok még hozzájuk fordulni, mert megbízhatóak és rugalmasak. Rendszeresen kaptam helyzet jelentést minden látogatásról, a felmerülő kis malőröket Otti jól kezelte. Szívesen ajánlom más cica gazdiknak is."
+                     <cite> — Zsuzsanna</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote"> 
+                     "Nagyon örülök hogy rátok találtam és hogy Kata gondját viselte a két cicámnak amíg távol voltam! Jól estek a napi üzenetek és képek! Az ajándékba kapott kis egér pedig teli találat volt nekik! 😊 Még egyszer köszönöm!"
+                     <cite> — Anna</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">"Maximálisan csak ajánlani tudom őket. Mi most először vettünk igénybe ilyen szolgáltatást 2 cicánk mellé, és ráadásul nehezített terepen, mert az egyik cicánk cukorbeteg. Gabò napi kétszer jött és adta be az inzulint, gondoskodott cicáinkròl maximális odaadással és szeretettel. Mi is és cicáink is elégedettek voltak. Biztos, hogy a jövőben még igénybe fogjuk venni szolgáltatásaikat. Így végre nyugodtan fogunk tudni utazni, mert tudjuk, hogy jó és hozzáértő kezekben lesznek a cicagyerekeink. <br><br> 😻 Köszönjük"
+                     <cite> — Edina & Zoli, valamint Selymi <span style="font-style: normal;">🐾</span> & Nicolaj</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">"Maszat cicánk nevében is mondhatjuk, hogy maximálisan elégedettek vagyunk a Local Cattel, Betti igazán szuper cicaszitter volt, csodás fényképeket kaptunk, öröm volt minden nap olvasni a beszámolót, és hazaérkezve sem sértődöttség várt minket, ami szintén nagyon jó jel. 😊 Maszat még kis ajándékot is kapott, amivel imád játszani. 😊 Legközeleb is biztosan Titeket hívunk, nagyon köszönjük!"
+                     <cite> — Judit</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">"Nagyon örülünk, hogy rátaláltunk erre a hiánypótló szolgáltatásra. Az első pillanattól kezdve gördülékeny volt a kommunikáció, megnyugtató. hogy felkészültek szinte minden eshetőségre. A cicaszitterünk, Betti minden nap részletes helyzetjelentést küldött. Mira így sokkal jobban viselte a távollétünket, és mi is nyugodtak lehettünk végig. Köszönjük, visszatérő kliensek leszünk."
+                     <cite> — Zsuzsi</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Állatira örülök, hogy rábukkantam a LocalCatre: a segítségükkel tényleg gondtalanul utazgattunk húsvétkor. Első kapcsolatfelvételre azonnal válaszoltak, másnapra már könnyedén, mégis átfogóan megállapodtunk mindenben. A sitterben első pillanattól fogva megbíztam, és valóban lelkiismeretesen, sőt, szeretettel viselte gondját a macskáinknak (Brave és Shy). Remélem, hogy számíthatok a segítségetekre a jövőben is, én ragaszkodnék hozzátok."
+                     <cite> — Sándor</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "A Local Cat szakembere 1 hetes nyaralásom alatt viselte macskám gondját. Ez örök stressz az ember számára, hogy kire terhelje rá házi kedvencének gondviselését ismerősei közül. Sokszor ez szoros helyzeteket és szorongással teli útnak indulásokat eredményez, most azonban az általában elérhető ismerőseink egyikének sem volt alkalmas időpont, hogy segítse macskánk túlélését távollétünk napjaiban. Már erős elkeseredésben voltam, mikor rátaláltam a LocalCat vállalkozásra. Professzionális hozzáállással, felkészültséggel, emberséggel és megbízhatósággal találkoztam. Kedvenc állatunkat és otthonunkat rábízni valakire nem könnyű vállalás. Azonban a LocalCat munkatársa, Brigitta nagyszerű munkát végzett, gondozta a cicánkat, játszott is vele, és a megnyugvásunkat segítették a kedves, vidám napi fényképes beszámolók is. Már az első találkozáskor megnyerte cicánk bizalmát, ami óriási dolog, a mi bizalmatlanabb természetű macskánknál. Hálásak vagyunk, elégedettek, és kipihentek. Köszönjük, bárkinek szívesen ajánlom!!!"
+                     <cite> — Tamás</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Igazi macskarajongó szitterek, akiket a cica is visszavár, csak ajánlani tudom őket."
+                     <cite> — Orsi</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Gyors és hatékony kommunikáció, kedves és segítőkész hozzáállás. A cicák élvezhették az otthon kényelmét és a gondoskodó ellátást, amíg mi távol voltunk. Köszönjük!"
+                     <cite> — Tímea</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Ma érkeztem haza az év végi utazgatásomból és a Localcatnek hála Manót és Maszatot végig biztonságban tudhattam. A küldött kis beszámolóknak köszönhetően mindig tudtam hogy minden a legnagyobb rendben velük és semmiben sem szenvednek hiányt. Még játékban sem. Köszönjük Localcat, Köszönjük Bogi!!! 😊 És a rugalmasságukat külön kiemelném! Még ajándékot is kaptunk!!"
+                     <cite> — Nikolett</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Nagyon hálás vagyok a LocalCat csapatának, hogy a cicám az otthoni megszokott környezetében kaphatott szeretetet és odafigyelést a távollétemben is. Rugalmas, megbízható, megnyugtató, csak ajánlani tudom Zafikámmal egyetemben!"
+                     <cite> — Miléna</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Szuper ötlet és kiváló megvalósítás! Minden gyorsan és gördülékenyen ment, még a cicasétáltatás sem volt probléma :))) És a barátaink is örülnek, hogy ez a feladat nem rájuk hárult. Köszi szépen!"
+                     <cite> — Annamari</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Még soha senki nem kezelte ennyire hozzáértően a három fős bűnszövetkezetet. A kisállatok életükben először nem álltak bosszút a távollétünkért. Sokkal nyugodtabban fogunk tudni utazgatni, és a macskák szőre is szebben csillog, mikor hazaérünk. Köszönjük Viki, nagyon hálásak vagyunk!"
+                     <cite> — Kata</cite>
+                  </blockquote>
+               </div>
+               <div class="carousel-cell notmobilecell">
+                  <blockquote class="quote">
+                     "Gördülékeny ügyintézés és gondos cicaellátás! Még az én nyuszi cicámat is elő tudták csalogatni a csigaházából, amit nagyon köszönök! Végre valaki, akire nyugodt szívvel rá merem bízni az én kicsi szerelmem! Csak ajánlani tudom mindenkinek!!!"
+                     <cite> — Bernadett</cite>
+                  </blockquote>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="buttonholderfortwo abbuholder">
+         <button class="showmemore">Megnézem az összes értékelést</button>
+         <a href="/megrendeles" class="order-href"><i class="lcicon-megrendelem-mancs-korben"></i>AJÁNLATKÉRÉS</a>
+         <a href="/gyik.html" class="order-href faqhref">GY.I.K.</a>
+      </div>
+      </div>
+      </div>
+      <div class="yellowline-bottom">
+         <a href="#top" class="top"><img src="img/up.png" alt="irány az oldal teteje"></img></a>
+      </div>
+      <footer>
+         <div class="footermobile">
+            <div class="footertop">
+               <a href="https://www.instagram.com/localcatbudapest/" class="iconhrefone"><i class="lcicon-instagram"></i></a>
+               <a href="www.google.com" class="iconhreftwo"><i class="lcicon-localcat-cica"></i></a>
+               <a href="https://hu-hu.facebook.com/localcatbudapest/" class="iconhrefthree"><i class="lcicon-facebook"></i></a>
+            </div>
+            <div class="footermiddle">
+               <div class="footermiddleline"></div>
+               <div class="fone">
+                  <p class="ftext">INFORMÁCIÓK</p>
+                  <a href=""><span class="dalinelight">—</span>  ÁSZF</a><a href=""><span class="dalinelight">—</span>  Adatvédelem</a><a href=""><span class="dalinelight">—</span> Impresszum</a>
+               </div>
+               <div class="ftwo">
+                  <p class="ftext">OLDALTÉRKÉP</p>
+                  <a href="/szolgaltatasok"><span class="dalinelight">—</span> Szolgáltatások</a><br>
+                  <a href="/arak"><span class="dalinelight">—</span> Árak</a><br>
+                  <a href="/ajanlatkeres.html"><span class="dalinelight">—</span> Ajánlatkérés</a><br>
+                  <a href="/rolunk.html"><span class="dalinelight">—</span> Rólunk</a><br>
+                  <a href="/gyik.html"><span class="dalinelight">—</span> Gyik</a><br>
+                  <a href="/kapcsolat.html"><span class="dalinelight">—</span> Kapcsolat</a>
+               </div>
+            </div>
+            <div class="footerbottom">
+               <p class="ftext">KAPCSOLAT</p>
+               <a href="tel:+36707055282" title="Tel LocalCat Budapest"><i class="lcicon-telefon"></i> +36 70 70 55 282</a>
+               <a href="mailto:info@localcat.hu?subject=Email%20a%20LocalCat-nek"><i class="lcicon-email"></i> info@localcat.hu</a>
+            </div>
+         </div>
+         <p class="last">@2021 LocalCat. All Rights Reserved</p>
+         <div class="footerpc">
+            <div class="onepc">
+               <a href="www.google.com" class="iconhrefzero"><i class="lcicon-localcat-cica"></i></a>
+               <p class="ftext">INFORMÁCIÓK</p>
+               <a href=""><span class="dalinelight">—</span>  ÁSZF</a><a href=""><span class="dalinelight">—</span>  Adatvédelem</a><a href=""><span class="dalinelight">—</span> Impresszum</a>
+               <p class="lastpc">@2021 LocalCat. All Rights Reserved</p>
+            </div>
+            <div class="twopc">
+               <div class="borderleft"></div>
+               <p class="ftext">OLDALTÉRKÉP</p>
+               <a href="/szolgaltatasok"><span class="dalinelight">—</span> Szolgáltatások</a>
+               <a href="/arak"><span class="dalinelight">—</span> Árak</a>
+               <a href="/ajanlatkeres.html"><span class="dalinelight">—</span> Ajánlatkérés</a>
+               <a href="/rolunk.html"><span class="dalinelight">—</span> Rólunk</a>
+               <a href="/gyik.html"><span class="dalinelight">—</span> Gyik</a>
+               <a href="/kapcsolat.html"><span class="dalinelight">—</span> Kapcsolat</a>
+            </div>
+            <div class="threepc">
+               <div class="borderleft"></div>
+               <p class="ftext">KAPCSOLAT</p>
+               <a href="tel:+36707055282" title="Tel LocalCat Budapest"><i class="lcicon-telefon"></i> +36 70 70 55 282</a>
+               <a href="mailto:info@localcat.hu?subject=Email%20a%20LocalCat-nek"><i class="lcicon-email"></i> info@localcat.hu</a>
+               <div class="social">
+                  <a href="https://hu-hu.facebook.com/localcatbudapest/" class="iconhrefthree"><i class="lcicon-facebook"></i></a>
+                  <a href="https://www.instagram.com/localcatbudapest/" class="iconhrefone"><i class="lcicon-instagram"></i></a>
+               </div>
+            </div>
+         </div>
+         <div class="marginbottom"></div>
+         <span class="wearemobile"></span>
+         </div>
+      </footer>
+      <script>
+         function openNav() {
+            const navLinks = document.querySelectorAll('.navlink');
+            const navIcon = document.querySelector("#nav-icon1");
+            const mySidenav = document.querySelector("#mySidenav");
+            navIcon.classList.toggle("open");
+            mySidenav.classList.toggle("open-sidemenu");
+            navLinks.forEach(element => {
+                element.classList.toggle('fadeInDown')
+            });
+         }
+         
+         function closeNav() {
+            const navLinks = document.querySelectorAll('.navlink');
+            const navIcon = document.querySelector("#nav-icon1");
+            const mySidenav = document.querySelector("#mySidenav");
+            navIcon.classList.remove("open");
+            mySidenav.classList.remove("open-sidemenu");
+            navLinks.forEach(element => {
+                element.classList.remove('fadeInDown')
+            });
+         }
+         
+      </script>
+      <script src="includes/flickity-docs.min.js?3"></script>
+      <script>
+         const viewPortCheck = document.querySelector('.wearemobile');
+         const showMeButton = document.querySelector('.showmemore');
+         showMeButton.addEventListener('click', handleIconClick)
+         
+         function handleIconClick() {
+         
+         const notMobile = document.querySelectorAll('.notmobilecell');
+         notMobile.forEach(element => {
+             element.classList.add('showed')  
+             });         
+             showMeButton.classList.add('nonebutton');
+         }
+         
+         if(viewPortCheck.offsetParent === null) {
+         var carousel = document.querySelector('.carousel');
+         var flkty = new Flickity('.carousel');
+         window.onload = (event) => {        
+         flkty.resize();
+         }
+         };
+      </script>
+   </body>
+</html>

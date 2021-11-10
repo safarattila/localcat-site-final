@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="hu">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GY.I.K. - Mikor, hogyan, mennyi időre és mire lehet szükség? - LocalCat</title>
+      <meta name="description" content="Gyakran felvetődő kérdésekre - pl. mikor és hogyan vehető igénybe cica-szitter szolgáltatásunk, és még sok technikai részletre - válaszolunk ezen az oldalon" />
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png" />
+      <link rel="apple-touch-icon-precomposed" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png" />
+      <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32" />
+      <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16" />
+      <meta name="theme-color" content="#1a1a1a">
+      <link rel="stylesheet" href="includes/stylesheet.css?v=2">
+      <style>
+         section {max-width: 870px;padding-top:60px; padding-bottom:30px;
+         margin-left:var(--marg);
+         scroll-behavior: smooth!important;
+         margin-right:var(--marg);}
+         .accordion dt {
+         font-weight: bold;
+         margin: 0;
+         font-size: 1.2em;
+         border-bottom: 1px solid #aaa;
+         }
+         .accordion dd {
+         margin: 0;
+         }
+         .accordion[role="tablist"] dt {
+         position: relative;
+         background-color: white;
+         border-bottom: 1 px solid var(--localgray);
+         border-top: 1px solid var(--localgray);
+         padding: 16px;
+         padding-right:42px;
+         user-select: none;
+         font-size: 16px;
+         line-height:1.3;
+         cursor: pointer;
+         font-family: var(--book);
+         transition: background-color 0.4s, color 0.4s;
+         }
+         .accordion[role="tablist"] dt:after {
+         content: "";
+         border: 8px solid transparent;
+         border-top-color: rgba(102, 102, 102, 0.5);
+         position: absolute;
+         top: 50%;
+         right: 1em;
+         margin-top: -3px;
+         transform: rotate(0deg);
+         transition: transform 0.3s, color 0.4s;
+         transform-origin: 50% 20%;
+         }
+         .accordion[role="tablist"] dt[aria-selected="true"] {
+         background-color: rgba(0, 0, 0, 0.05);
+         }
+         .accordion[role="tablist"] dt[aria-expanded="true"] {
+         color:#212529;
+         text-shadow: 0.3px 0 0 #212529;
+         }
+         .accordion[role="tablist"] dt[aria-expanded="false"] {
+    
+         color:#333;
+
+         }
+         .accordion[role="tablist"] dt[aria-expanded="true"]:after {
+         transform: rotate(180deg);
+         }
+
+         .accordion[role="tablist"] dd {
+         overflow: hidden;
+         max-height: 600px;
+         padding: 32px 16px;
+    
+         background-color: white;
+      
+         }
+         .accordion[role="tablist"] dd *:first-child {
+         margin-top: 0;
+         }
+         .accordion[role="tablist"] dd *:last-child {
+         margin-bottom: 0;
+         }
+ 
+         .accordion[role="tablist"] dd[aria-hidden="true"] {
+         visibility: hidden;
+         max-height: 0;
+         padding: 0 24px;
+   
+         }
+       
+         .main-title {font-size:21px;}
+         @media only screen and (min-width: 358px) {.main-title {font-size:24px;}}
+         @media only screen and (min-width: 570px) {.accordion[role="tablist"] dt {font-size:16px; }}
+         @media only screen and (min-width: 650px) {#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven {display:none;}}
+         @media only screen and (min-width: 1023px) {
+         .accordion[role="tablist"] dt {font-size:18px;  padding-right:16px;     background-color: #fbfbfb;  }
+         .accordion[role="tablist"] dt[aria-selected="true"]:focus, .accordion[role="tablist"] dt[aria-selected="true"]:hover,/* .accordion[role="tablist"] dt:focus,*/  .accordion[role="tablist"] dt:hover {
+         /* color: #1a1a1a;
+         background-color: rgba(0, 0, 0, 0.15);*/
+         background-color:rgba(134, 142, 150, .19);
+         }
+         .main-title {font-size:42px;}
+         .accordion[role="tablist"] dt {padding-right:36px;}
+         .accordion[role="tablist"] dd {
+         padding: 46px 24px;}
+         section {  margin:auto; padding-top:90px;padding-bottom:20px; }
+         .accordion[role="tablist"] dt[aria-expanded="false"] { color:/*#666;*/#666;}
+         .accordion p {
+         max-width: 90%;
+         }
+         .main-title {top:41%; right:-26vw!important; transform:translateY(-50);}
+         .gradient {
+         background: linear-gradient(180deg, rgba(255,255,255,0.28) 50%, rgba(255,255,255,0) 100%);
+         }
+         }
+         @media only screen and (min-width: 1300px){
+         .main-title {
+         font-size: 44px;
+         }}
+         @media only screen and (min-width: 1400px)
+         {.main-title {
+         font-size: 48px;
+         }}
+         @media only screen and (min-width: 1700px) {.main-title {right:-10%!important}}
+      </style>
+   </head>
+   <body>
+      <nav>
+         <div class="mobile-menu">
+            <div class="langselector"><a class="active-lang">HUN</a><br><a href="/home">ENG</a></div>
+            <a href="www.google.com" class="main-mobile-logo"><i class="lcicon-localcat-cica"></i></a>
+            <div class="menu-icon" onclick="openNav()">
+               <div id="nav-icon1">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </div>
+            </div>
+         </div>
+         <div id="mySidenav" class="sidenav">
+            <a href="#" class="animated navlink noselect" onclick="closeNav()">Szolgáltatások</a>
+            <a href="javascript:void(0);" class="animated-2 navlink">Árak</a>          
+            <a href="/ajanlatkeres.html" class="animated-3 navlink">Ajánlatkérés</a>
+            <a href="/rolunk.html" class="animated-4 navlink">Rólunk</a>
+            <a href="/gyik.html" class="animated-5 navlink">Gyik</a>
+            <a href="/kapcsolat.html" class="animated-6 navlink">Kapcsolat</a>
+         </div>
+      </nav>
+      <div class="gradient"></div>
+      <div class="hero pad faqpoz">
+         <nav>
+            <div class="pc-menu">
+               <a href="/" style="margin-left:5px;">Kezdőlap</a>
+               <a href="/szolgaltatasok">Szolgáltatások</a>
+               <a href="/arak">Árak</a>
+               <a href="/ajanlatkeres.html">Ajánlatkérés</a>
+               <a href="/rolunk.html">Rólunk</a>
+               <a href="/gyik.html">Gyik</a>
+               <a href="/kapcsolat.html" style="margin-right:45px;">Kapcsolat</a>
+               <a href="/gyik.html" class="active-lang" style="margin-right:5px;">Hun</a>|
+               <a href="/kapcsolat.html" style="margin-left:5px;">Eng</a>
+            </div>
+         </nav>
+         <h1 class="main-title"> 
+            <span>
+            Gyakran ismételt kérdések
+            </span>
+         </h1>
+      </div>
+      <section>
+         <dl class="accordion">
+            <span id="zero"></span>
+            <dt data-name="zero">Mennyi ideig tart egy cicaszittelés?</dt>
+            <dd>
+               <p>Egy látogatás 30–40 percig tart – ez idő alatt a cicád minden igényét kielégíti a hozzátok látogató cicaszitter.</p>
+            </dd>
+            <span id="one"></span>
+            <dt data-name="one">Milyen időintervallumban lehet igénybe venni a localcat szolgáltatást?</dt>
+            <dd>
+               <p>Cicaszittereink minden nap (hétvégén és ünnepnapokon is) 8.00–20.00-ig állnak a macskakliensek rendelkezésére.
+                  A látogatások három időintervallumban kérhetők: 8.00–12.00, 12.00–16.00 és 16.00–20.00.
+               </p>
+            </dd>
+            <span id="two"></span>
+            <dt data-name="two">Hol lehet igénybe venni a localcat cicaszitter-szolgáltatást?</dt>
+            <dd>
+               <p>Budapesten az I., V., VI., VII., VIII. kerületben, valamint a II., III., IV., IX., X., XI., XII., XIII., XIV., XVI., XVII. kerületek egyes részein tudnak jelenleg házhoz menni cicaszittereink. Ha ezek között nem szerepel a saját kerületed, keress meg minket, próbálunk megoldást találni.</p>
+            </dd>
+            <span id="three"></span>
+            <dt data-name="three">Minden alkalommal ugyanaz a cicaszitter jön hozzám?</dt>
+            <dd>
+               <p>A LocalCat szerveződési elve, hogy Budapest részeit a cicaszitterek által gyakran látogatott (munkahely, lakhely stb.) kerületek szerint osztjuk fel. Ez a rendeződés a gyors közlekedés és a pontos érkezés mellett azt a célt is szolgálja, hogy az egyes cicakliensekhez ugyanaz a macskaszitter érkezzen, ha kapacitása engedi, hiszen a cicák számára nemcsak a megszokott környezet, de a már megkedvelt cicaszitter is hozzájárul a biztonságérzet fenntartásához, és hogy stresszmentesen teljen a gazditól külön töltött idő. 
+                  Természetesen előfordulhatnak etetés-egybeesések, illetve helyettesítések, de ezekben az esetekben is arra törekszünk, hogy maximum két macskaszitter etessen egy-egy cicát.     
+               </p>
+            </dd>
+            <span id="four"></span>
+            <dt data-name="four">A macskámnak gyógyszereket kell szednie, ez problémát jelent?</dt>
+            <dd>
+               <p>Bár nem vagyunk állategészségügyi szakemberek, a képességeink határáig minden erőnkkel azon leszünk, hogy találjunk az ilyen esetekre is megoldást. A gyógyszeres kezelésekről és kúrákról, kérlek, mindenképpen egyeztess velünk.
+               </p>
+            </dd>
+            <span id="five"></span>
+            <dt data-name="five">Hány nappal szükséges előre jeleznem, hogy szeretném igénybe venni a cicaszitter-szolgáltatást?</dt>
+            <dd>
+               <p>Igyekszünk minél rugalmasabban kezelni a „foglalásokat”, de arra kérünk, hogy lehetőség szerint a szükséges cicaszittelés dátuma előtt minimum két héttel jelezd nekünk az igényedet (az első látogatás előtt a személyes konzultációra is sort kell kerítenünk). A foglalásokat kizárólag abban az esetben tudjuk megerősíteni, ha van szabad kapacitásunk, épp ezért érdemes előre gondolkozni. Hosszabb utazások esetén mindkét fél számára az a legelőnyösebb, ha előre tervezel és időben foglalsz – így tudjuk neked garantálni, hogy a cicaszittered akár egy héten át, ugyanabban az idősávban látogasson el a cicádhoz. Last minute foglalásra (12–24 órával az aktuális etetés előtt) csak az etetési időszak meghosszabbításának esetén van lehetőség (pl. ha valaki 5 nap helyett 6 napig van távol).
+               </p>
+            </dd>
+            <span id="six"></span>
+            <dt data-name="six">Mi a localcat cicaszitter-szolgáltatás igénybevételének menete?</dt>
+            <dd>
+               <p>Töltsd ki az <a href="/ajanlatkeres.html" style="color:inherit;">ajánlatkérőlapunkat</a>. Mi 24 órán belül visszajelzünk, hogy tudjuk-e vállalni a felkérést. Amennyiben igen, a megrendelőlap kitöltése és visszaigazolása után a kijelölt cicaszittered egyeztet veled egy időpontot, amikor ellátogat hozzátok, hogy megoszd vele a szükséges tudnivalókat – a cicád napi rutinját, étkezési szokásait és igényeit, állatorvosának elérhetőségeit stb. Az egyszeri bemutatkozó találkozónak nincs külön díja, ez a LocalCat szolgáltatásának részét képezi. Ezen az alkalmon egyúttal a kulcsot/kulcsokat is át tudod adni a macskaszitterednek.    
+               </p>
+            </dd>
+            <span id="seven"></span>
+            <dt data-name="seven">Hány kulcsot szükséges biztosítanod számunkra?</dt>
+            <dd>
+               <p>Lehetőség szerint két kulcscsomót biztosíts számunkra. Ez egy dupla biztosíték arra, hogy minden esetben (akár vis maior helyzetekben) be tudjunk jutni a cicádhoz. Az egyik kulcs a cicaszitterednél lesz, a másik pedig a LocalCat irodájában.</p>
+               <p>Amennyiben csak egy kulcsot tudsz számunkra biztosítani, meg kell nevezned egy biztonsági kontaktot (családtag/rokon/barát/szomszéd), aki a cicaszittelés ideje alatt Budapesten tartózkodik, és van egy extra kulcsa a lakáshoz. Erre csupán elővigyázatosságból van szükség, arra az esetre, ha egy szittert érintő vis maior helyzet lépne fel. Ekkor a macskaszitter helyett azonnal lépünk központilag, így elengedhetetlen, hogy legyen egy B opciónk a cicához való bejutáshoz.</p>
+            </dd>
+            <span id="eight"></span>
+            <dt data-name="eight">Szükséges, hogy biztosítva legyen a lakásom?</dt>
+            <dd>
+               <p>Bár nem feltétel, mindenképpen javasoljuk. A cicaszitterekért maximális felelősséget vállalunk, így a lakásban található értékek biztonsága miatt nem kell aggódnod. Az is biztos, hogy ha napi mozgás érzékelhető az ingatlanban, az a betörőket is távol tartja. Az otthonbiztosítások által lefedett károkért (tűzkár, villámcsapáskár, árvízkár és földrengéskár, viharkár és felhőszakadáskár, jégveréskár és hónyomáskár, robbanás- és robbantáskár, csőtörés- és beázáskár, üvegtöréskár, épületrongáláskár, betöréses lopáskár, rabláskár stb.) azonban értelemszerűen nem tudunk felelősséget vállalni.</p>
+               <p>Amennyiben biztonsági kamera van az ingatlanban, kérlek, ennek jelenlétéről mindenképpen informálj minket.</p>
+            </dd>
+            <span id="nine"></span>
+            <dt data-name="nine">Mikor és milyen módon történik a fizetés?</dt>
+            <dd>
+               <p>A fizetés a cicaszittelés végeztével banki átutalással, számla ellenében történik, az elektronikus számla küldését követő két banki napon belül.</p>
+            </dd>
+            <span id="ten"></span>
+            <dt data-name="ten">A localcat szolgáltatása egyéb kisállatok gondozására is kiterjed?</dt>
+            <dd>
+               <p>Nem. A LocalCat cicaszitter-szolgáltatás keretében kizárólag macskák gondozását vállaljuk, egyéb kisállatokat – kutyák, hörcsögök, nyulak, tengerimalacok, madarak, egzotikus állatok, teknősök, halak stb. – sajnos nem áll módunkban ellátni.</p>
+            </dd>
+            <span id="eleven"></span>
+            <dt data-name="eleven">Hogyan mondható le a szolgáltatás?</dt>
+            <dd>
+               <p>A cicaszitter-szolgáltatás a megrendelőlap visszaküldését követően kizárólag az alábbi feltételekkel mondható le:</p>
+               <p>(A) 7–4 nappal a szolgáltatás megkezdése előtt a cicaszittelés teljes összegének 50%-a kifizetendő,</p>
+               <p>(B) 3–0 nappal vagy a szolgáltatás megkezdését követően a cicaszittelés teljes összege kifizetendő.</p>
+               <p>Cicaszittereink a lehető legtöbb figyelmet és gondozást fordítják cicáitokra, épp ezért kapacitásaik egy napra végesek. Meghatározott számú címre tudnak kimenni egy-egy alkalommal, az utolsó pillanatban történő lemondások következtében pedig nem mindig tudjuk újabb cicák gondozását felvenni a naptárunkba.</p>
+            </dd>
+         </dl>
+      </section>
+      <div class="buttonholderfortwo abbuholder">
+         <a href="/megrendeles" class="order-href"><i class="lcicon-megrendelem-mancs-korben"></i>AJÁNLATKÉRÉS</a>
+         <a href="/kapcsolat.html" class="order-href faqhref contacthref">KAPCSOLAT</a>
+      </div>
+      </div>
+      </div>
+      <div class="yellowline-bottom">
+         <a href="#top" class="top"><img src="img/up.png" alt="irány az oldal teteje"></img></a>
+      </div>
+      <footer>
+         <div class="footermobile">
+            <div class="footertop">
+               <a href="https://www.instagram.com/localcatbudapest/" class="iconhrefone"><i class="lcicon-instagram"></i></a>
+               <a href="www.google.com" class="iconhreftwo"><i class="lcicon-localcat-cica"></i></a>
+               <a href="https://hu-hu.facebook.com/localcatbudapest/" class="iconhrefthree"><i class="lcicon-facebook"></i></a>
+            </div>
+            <div class="footermiddle">
+               <div class="footermiddleline"></div>
+               <div class="fone">
+                  <p class="ftext">INFORMÁCIÓK</p>
+                  <a href=""><span class="dalinelight">—</span>  ÁSZF</a><a href=""><span class="dalinelight">—</span>  Adatvédelem</a><a href=""><span class="dalinelight">—</span> Impresszum</a>
+               </div>
+               <div class="ftwo">
+                  <p class="ftext">OLDALTÉRKÉP</p>
+                  <a href="/szolgaltatasok"><span class="dalinelight">—</span> Szolgáltatások</a><br>
+                  <a href="/arak"><span class="dalinelight">—</span> Árak</a><br>
+                  <a href="/ajanlatkeres.html"><span class="dalinelight">—</span> Ajánlatkérés</a><br>
+                  <a href="/rolunk.html"><span class="dalinelight">—</span> Rólunk</a><br>
+                  <a href="/gyik.html"><span class="dalinelight">—</span> Gyik</a><br>
+                  <a href="/kapcsolat.html"><span class="dalinelight">—</span> Kapcsolat</a>
+               </div>
+            </div>
+            <div class="footerbottom">
+               <p class="ftext">KAPCSOLAT</p>
+               <a href="tel:+36707055282" title="Tel LocalCat Budapest"><i class="lcicon-telefon"></i> +36 70 70 55 282</a>
+               <a href="mailto:info@localcat.hu?subject=Email%20a%20LocalCat-nek"><i class="lcicon-email"></i> info@localcat.hu</a>
+            </div>
+         </div>
+         <p class="last">@2021 LocalCat. All Rights Reserved</p>
+         <div class="footerpc">
+            <div class="onepc">
+               <a href="www.google.com" class="iconhrefzero"><i class="lcicon-localcat-cica"></i></a>
+               <p class="ftext">INFORMÁCIÓK</p>
+               <a href=""><span class="dalinelight">—</span>  ÁSZF</a><a href=""><span class="dalinelight">—</span>  Adatvédelem</a><a href=""><span class="dalinelight">—</span> Impresszum</a>
+               <p class="lastpc">@2021 LocalCat. All Rights Reserved</p>
+            </div>
+            <div class="twopc">
+               <div class="borderleft"></div>
+               <p class="ftext">OLDALTÉRKÉP</p>
+               <a href="/szolgaltatasok"><span class="dalinelight">—</span> Szolgáltatások</a>
+               <a href="/arak"><span class="dalinelight">—</span> Árak</a>
+               <a href="/ajanlatkeres.html"><span class="dalinelight">—</span> Ajánlatkérés</a>
+               <a href="/rolunk.html"><span class="dalinelight">—</span> Rólunk</a>
+               <a href="/gyik.html"><span class="dalinelight">—</span> Gyik</a>
+               <a href="/kapcsolat.html"><span class="dalinelight">—</span> Kapcsolat</a>
+            </div>
+            <div class="threepc">
+               <div class="borderleft"></div>
+               <p class="ftext">KAPCSOLAT</p>
+               <a href="tel:+36707055282" title="Tel LocalCat Budapest"><i class="lcicon-telefon"></i> +36 70 70 55 282</a>
+               <a href="mailto:info@localcat.hu?subject=Email%20a%20LocalCat-nek"><i class="lcicon-email"></i> info@localcat.hu</a>
+               <div class="social">
+                  <a href="https://hu-hu.facebook.com/localcatbudapest/" class="iconhrefthree"><i class="lcicon-facebook"></i></a>
+                  <a href="https://www.instagram.com/localcatbudapest/" class="iconhrefone"><i class="lcicon-instagram"></i></a>
+               </div>
+            </div>
+         </div>
+         <div class="marginbottom"></div>
+         </div>
+      </footer>
+      <script>
+         function openNav() {
+            const navLinks = document.querySelectorAll('.navlink');
+            const navIcon = document.querySelector("#nav-icon1");
+            const mySidenav = document.querySelector("#mySidenav");
+            navIcon.classList.toggle("open");
+            mySidenav.classList.toggle("open-sidemenu");
+            navLinks.forEach(element => {
+                element.classList.toggle('fadeInDown')
+            });
+         }
+         
+         function closeNav() {
+            const navLinks = document.querySelectorAll('.navlink');
+            const navIcon = document.querySelector("#nav-icon1");
+            const mySidenav = document.querySelector("#mySidenav");
+            navIcon.classList.remove("open");
+            mySidenav.classList.remove("open-sidemenu");
+            navLinks.forEach(element => {
+                element.classList.remove('fadeInDown')
+            });
+         }
+         
+      </script>
+      <script>
+         var ia = {
+         aria: {},
+         instances: []
+         };
+         
+         (function() {
+         "use strict";
+         
+         ia.aria.Accordion = function(el, index) {
+         this.id = 'accordion-' + index;
+         this.el = el;
+         this.initialize();
+         }
+         
+         ia.aria.Accordion.prototype = {
+         
+         tabs: [],
+         panels: [],
+         
+         initialize: function() {
+         this.el.setAttribute('id', this.id);
+         this.el.setAttribute('role', 'tablist');
+         this.el.setAttribute('aria-multiselectable', 'true');
+         
+         this.panels = [].slice.call( this.el.getElementsByTagName('dd') );
+         
+         this.panels.map( function( panel, i ){
+         panel.setAttribute('id', this.id + "-panel-" + i);
+         panel.setAttribute('role', 'tabpanel');
+         panel.setAttribute('aria-labeledby', this.id + "-tab-" + i);
+         panel.setAttribute('aria-hidden', 'true');
+         panel.addEventListener( 'keydown', this.onPanelKeydown.bind(this), true ); 
+         }, this );
+         
+         this.tabs = [].slice.call( this.el.getElementsByTagName('dt') );
+         this.tabs.map( function( tab, i ){
+         tab.setAttribute('role', 'tab');
+         tab.setAttribute('id', this.id + "-tab-" + i);
+         tab.setAttribute('aria-controls', this.id + "-panel-" + i);
+         tab.setAttribute('aria-expanded', false);
+         tab.setAttribute('aria-selected', false);
+         tab.setAttribute('tabindex', i === 0 ? '0' : '-1');
+         tab.addEventListener('click', this.onTabClick.bind(this));
+         tab.addEventListener('keydown', this.onTabKeydown.bind(this));
+         }, this );
+         },
+         
+         getPanel: function(tab) {
+         return document.getElementById(tab.getAttribute('aria-controls'));
+         },
+         
+         select: function(tab) {
+         this.deselectAll();
+         tab.setAttribute('aria-selected', 'true');
+         tab.setAttribute('tabindex', '0');
+         tab.focus();
+         },
+         
+         deselectAll: function() {
+         this.tabs.map(function(tab, i){
+         tab.setAttribute('aria-selected', 'false');
+         tab.setAttribute('tabindex', '-1');
+         }, this );
+         },
+         
+         show: function(tab) {
+         this.getPanel(tab).setAttribute('aria-hidden', 'false');
+         tab.setAttribute('aria-expanded', 'true');
+         runtoplace();
+         },
+         
+         hide: function(tab) {
+         this.getPanel(tab).setAttribute('aria-hidden', 'true');
+         tab.setAttribute('aria-expanded', 'false');
+         },
+         
+         hideAll: function() {
+         this.tabs.map(function(tab){
+         this.hide(tab);
+         }, this);
+         },
+         
+         getNextTab: function(tab) {
+         var next = tab.nextSibling;
+         if (next === null) {
+         return this.tabs[0];
+         } else if (next.tagName === 'DT') {
+         return next;
+         } else {
+         return this.getNextTab(next);
+         }
+         },
+         
+         getPrevTab: function(tab) {
+         var next = tab.previousSibling;
+         if (next === null) {
+         return this.tabs[this.tabs.length - 1];
+         } else if (next.tagName === 'DT') {
+         return next;
+         } else {
+         return this.getPrevTab(next);
+         }
+         },
+         
+         onTabClick: function(e) {
+         var showTab = e.target.getAttribute('aria-expanded') !== 'true';
+         this.hideAll();
+         if (showTab) {
+         this.show(e.target);
+         }
+         },
+         
+         onTabKeydown: function(e) {
+         switch (e.which) {
+         case 13: // ENTER
+         case 32: // SPACE
+         e.preventDefault();
+         e.stopPropagation();
+         var showTab = e.target.getAttribute('aria-expanded') !== 'true';
+         this.hideAll();
+         if (showTab) {
+           this.show(e.target);
+         }
+         break;
+         case 37: // LEFT
+         case 38: // UP
+         e.preventDefault();
+         e.stopPropagation();
+         this.select(this.getPrevTab(e.target));
+         break;
+         case 39: // RIGHT
+         case 40: // DOWN
+         e.preventDefault();
+         e.stopPropagation();
+         this.select(this.getNextTab(e.target));
+         break;
+         case 35: // END
+         e.preventDefault();
+         e.stopPropagation();
+         this.select(this.tabs[this.tabs - 1]);
+         break;
+         case 36: // HOME
+         e.preventDefault();
+         e.stopPropagation();
+         this.select(this.tabs[0]);
+         break;
+         }
+         },
+         
+         onPanelKeydown: function(e) {
+         if ( e.ctrlKey || e.metaKey ) {
+         switch (e.which) {
+         case 38: // UP
+           e.preventDefault();
+           e.stopPropagation();
+           if( e.currentTarget ){
+             this.select(this.getPrevTab(e.currentTarget)) ; 
+           }
+           break;
+         case 40: // PAGE DOWN
+           e.preventDefault();
+           e.stopPropagation();
+           if( e.currentTarget ){ 
+             this.select(this.getNextTab(e.currentTarget)) ; 
+           }
+           break;
+         }
+         }
+         }
+         };
+         
+         window.addEventListener('load', function() {
+         var accordions = document.getElementsByClassName('accordion');
+         for (var i = 0; i < accordions.length; i++) {
+         ia.instances[ia.instances.length] = new ia.aria.Accordion(accordions[i], i);
+         }
+         });
+         })();
+         
+         function runtoplace() {
+         const whatyouclicked = event.target;
+         const nameofwhatyouclicked = whatyouclicked.dataset.name;
+         const two = document.querySelector(`#${nameofwhatyouclicked}`);
+         two.scrollIntoView();
+         }
+      </script>
+   </body>
+</html>
