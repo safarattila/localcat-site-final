@@ -709,7 +709,7 @@ html {
   background-repeat: no-repeat; background-size:cover;
 }
 
-.faqpoz { background: url(../img/gyik.html-mob1.jpg); background-position: 100% 90%;
+.faqpoz { background: url(../img/gyik-mob1.jpg); background-position: 100% 90%;
   background-repeat: no-repeat; background-size:cover;
 }
 
@@ -1621,7 +1621,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
 
     @media only screen and (min-width: 400px) {
         .bpoz {background-position: center;}
-        .faqpoz {   background:url(../img/gyik.html.jpg);
+        .faqpoz {   background:url(../img/gyik.jpg);
           background-position: 100% 50%;
           background-repeat: no-repeat;
           background-size: cover;}
@@ -1782,7 +1782,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
               }
 
               @media only screen and (min-width: 800px) {
-              .aboutpoz {   background:url(../img/rolunk.html-o.jpg);
+              .aboutpoz {   background:url(../img/rolunk.jpg);
                 background-size: cover;}
 
                 .servicepoz {   background:url(../img/serviceopen.jpg);
