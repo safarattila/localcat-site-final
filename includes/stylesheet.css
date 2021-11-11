@@ -1927,7 +1927,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
             margin-top: clamp(60px, 4.167vw, 74px);
         
             margin-bottom: 40px; margin-bottom:clamp(40px, 2.778vw, 60px);font-size:15px; font-size:clamp(14px, 1.042vw, 15px);
-          width:220px; transition:background-color .5s ease-in-out, text-shadow .5s ease-in-out, color .5s ease-in-out; margin-bottom:60px;}
+          width:220px; transition:background-color .5s ease-in-out, box-shadow .5s ease-in-out, color .5s ease-in-out; margin-bottom:60px;}
           .longtextblock .yellow {padding-top:0;}
           .longtextblock .longyellow {padding-top:10px; padding-bottom:10px; margin-top:0; width:900px;}
           .lastboldp {padding-bottom:0!important;}
