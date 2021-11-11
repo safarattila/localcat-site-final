@@ -855,6 +855,14 @@ html {
       z-index:-1;
     }
 
+    @-moz-document url-prefix() {
+      .main-title span:after {
+        width: calc(100% + 6px);
+      }
+    }
+
+    
+
 
     .index-title span { background-color: #000;
       color: #FFF;
