@@ -1173,6 +1173,7 @@ transform: translateY(-50%);}
 .top-text-part {padding-top:50px; padding-bottom:40px; text-align: left;}
 h2.yellow {text-align:center; font-size:24px; font-family:var(--italic);font-style:italic;}
 .yellow span {
+  padding-top:1px;
   background-color: var(--localyellow);
   position:relative;
     color: #000;
@@ -1230,7 +1231,7 @@ h2.yellow {text-align:center; font-size:24px; font-family:var(--italic);font-sty
     height:64px;
     margin-bottom: 10px;
     width:216px;
-    background:black;
+    background-color:black;
     display:flex; 
     margin:auto;
     align-items:center;
@@ -1320,7 +1321,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
       justify-content: center;
       color: black;
       height: 64px;
-      background: var(--localyellow);}
+      background-color: var(--localyellow);}
 
       .buttonholderfortwo {margin-top:36px;}
 
@@ -1926,7 +1927,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
             margin-top: clamp(60px, 4.167vw, 74px);
         
             margin-bottom: 40px; margin-bottom:clamp(40px, 2.778vw, 60px);font-size:15px; font-size:clamp(14px, 1.042vw, 15px);
-          width:220px; transition:all .5s ease-in-out; margin-bottom:60px;}
+          width:220px; transition:background-color .5s ease-in-out, text-shadow .5s ease-in-out, color .5s ease-in-out; margin-bottom:60px;}
           .longtextblock .yellow {padding-top:0;}
           .longtextblock .longyellow {padding-top:10px; padding-bottom:10px; margin-top:0; width:900px;}
           .lastboldp {padding-bottom:0!important;}
@@ -1943,10 +1944,10 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
     font-size: 16px;
     font-size: clamp(16px, 0.938vw, 18px);
           }
-          .order-href:hover {background:var(--localyellow); color:black;     box-shadow: 0px 0px 0px 2px #545454;}
+          .order-href:hover {background-color:var(--localyellow); color:black;     box-shadow: 0px 0px 0px 2px #545454;}
           @-moz-document url-prefix() { 
             .order-href:hover {
-             background:var(--localyellow); color:black;     box-shadow: none;}
+             background-color:var(--localyellow); color:black;     box-shadow: none;}
             
           }
           .order-href i {font-size:54px; padding-left:6px;}
@@ -1971,7 +1972,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
         .pricetwo {font-size: 48px; padding-top:50px; padding-top:clamp(50px, 3.472vw, 60px);}
         h2.yellow {font-size:36px; font-size:clamp(36px, 1.979vw, 38px);}
 
-        .yellow span { box-shadow: -28px 0px 0 9px var(--localyellow), 28px 0px 0 9px var(--localyellow), 0 0 0 9px var(--localyellow);}
+        .yellow span { box-shadow: -28px 0px 0 9px var(--localyellow), 28px 0px 0 9px var(--localyellow), 0 0 0 9px var(--localyellow); padding-top:0;}
         .aboutindex .yellow span {
           box-shadow: -50px 0px 0 9px var(--localyellow), 50px 0px 0 9px var(--localyellow), 0 0 0 9px var(--localyellow);
         }
