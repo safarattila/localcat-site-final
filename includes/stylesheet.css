@@ -727,7 +727,7 @@ html {
       .secondspan {width: 268px;
         position:relative;
         z-index:2;
-        display: block;
+        display: inline-block;
       
         white-space: nowrap;}
 
