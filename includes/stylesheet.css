@@ -855,11 +855,7 @@ html {
       z-index:-1;
     }
 
-    @-moz-document url-prefix() {
-      .main-title span:after {
-        width: calc(100% + 6px);
-      }
-    }
+    
 
     
 
@@ -883,6 +879,12 @@ html {
       left: -5px;
       top: -3px;
       z-index: -1;
+      }
+
+      @-moz-document url-prefix() {
+        .index-title span:after {
+          width: calc(100% + 6px);
+        }
       }
      
   
