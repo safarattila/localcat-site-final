@@ -722,7 +722,7 @@ html {
 .firstspan {width: 268px;
   position:relative;
   z-index:3;
-      display: block;}
+      display: inline-block;}
 
       .secondspan {width: 268px;
         position:relative;
@@ -731,7 +731,7 @@ html {
       
         white-space: nowrap;}
 
-        .thirdspan {     display: block;
+        .thirdspan {     display: inline-block;
           width: 172px;
           z-index:1;
           position:relative;
