@@ -1680,7 +1680,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
 
                 .abbuholder {padding-top:50px;}
 
-                .indexpoz { background:url(../img/open.jpg);
+                .indexpoz { background:url(../img/open-three.jpg);
                   background-size: cover; background-position: center bottom; height:100vh;}
                   .indexstyle .hero {
                     height: 58.738vw;
@@ -2136,7 +2136,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
           i.speciali {font-size:42px}
           .icontainerindex {/*max-width:760px; */max-width:780px; padding-top: 54px;}
 
-          .indexpoz {background: url(../img/open-new.jpg);
+          .indexpoz {background: url(../img/open-new-two.jpg);
           background-size: cover;
           background-position: center bottom;}
 
@@ -2232,7 +2232,7 @@ margin-bottom:40px; margin-bottom:clamp(40px, 2.703vw, 60px)}
           .indexstyle .hero {/*height: calc(100vh + 80px);
             min-height: 800px;*/ height:850px;}
             .indexpoz {
-              background: url(../img/open.jpg);
+              background: url(../img/open-three.jpg);
               background-size: cover;
               background-position: center left;
           }

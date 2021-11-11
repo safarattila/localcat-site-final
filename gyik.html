@@ -93,7 +93,7 @@
          .main-title {font-size:21px;}
          @media only screen and (min-width: 358px) {.main-title {font-size:24px;}}
          @media only screen and (min-width: 570px) {.accordion[role="tablist"] dt {font-size:16px; }}
-         @media only screen and (min-width: 650px) {#one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven {display:none;}}
+         @media only screen and (min-width: 650px) {#first, #one, #two, #three, #four, #five, #six, #seven, #eight, #nine, #ten, #eleven {display:none;}}
          @media only screen and (min-width: 1023px) {
          .accordion[role="tablist"] dt {font-size:18px;  padding-right:16px;     background-color: #fbfbfb;  }
          .accordion[role="tablist"] dt[aria-selected="true"]:focus, .accordion[role="tablist"] dt[aria-selected="true"]:hover,/* .accordion[role="tablist"] dt:focus,*/  .accordion[role="tablist"] dt:hover {
@@ -130,7 +130,7 @@
       <nav>
          <div class="mobile-menu">
             <div class="langselector"><a class="active-lang">HUN</a><br><a href="/home">ENG</a></div>
-            <a href="/" class="main-mobile-logo"><i class="lcicon-localcat-cica"></i></a>
+            <a href="/localcat/" class="main-mobile-logo"><i class="lcicon-localcat-cica"></i></a>
             <div class="menu-icon" onclick="openNav()">
                <div id="nav-icon1">
                   <span></span>
@@ -152,14 +152,15 @@
       <div class="hero pad faqpoz">
          <nav>
             <div class="pc-menu">
+               <a href="/localcat/">Főoldal</a>
                <a href="/localcat/szolgaltatasok.html">Szolgáltatások</a>
                <a href="/localcat/arak.html">Árak</a>
                <a href="/localcat/ajanlatkeres.html">Ajánlatkérés</a>
                <a href="/localcat/rolunk.html">Rólunk</a>
                <a href="/localcat/gyik.html">Gyik</a>
                <a href="/localcat/kapcsolat.html" style="margin-right:45px;">Kapcsolat</a>
-               <a href="/localcat/gyik.html" class="active-lang" style="margin-right:5px;">Hun</a>|
-               <a href="/localcat/kapcsolat.html" style="margin-left:5px;">Eng</a>
+               <a href="#" class="active-lang" style="margin-right:5px;">Hun</a>|
+               <a href="#" style="margin-left:5px;">Eng</a>
             </div>
          </nav>
          <h1 class="main-title"> 
@@ -170,11 +171,11 @@
       </div>
       <section>
          <dl class="accordion">
-            <span id="zero"></span>
-            <dt data-name="zero">Mennyi ideig tart egy cicaszittelés?</dt>
+            <span id="first"></span>
+            <dt data-name="first">Mennyi ideig tart egy cicaszittelés?</dt>
             <dd>
                <p>Egy látogatás 30–40 percig tart – ez idő alatt a cicád minden igényét kielégíti a hozzátok látogató cicaszitter.</p>
-            </dd>
+            </dd>    
             <span id="one"></span>
             <dt data-name="one">Milyen időintervallumban lehet igénybe venni a localcat szolgáltatást?</dt>
             <dd>
